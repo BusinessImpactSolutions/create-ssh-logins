@@ -30,7 +30,7 @@ Will automatically login after creation if no error.
 
 ~/s/ssh/create-logins/create-logins.sh user@domain.tld
 
-### Run newly created/saved SSH login files: 
+## Run newly created/saved SSH login files: 
 
 ~/s/ssh/logins/name@domain.tld
 
