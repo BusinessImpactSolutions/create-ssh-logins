@@ -8,11 +8,13 @@ SSHDIR=~/.ssh;
 # Domain to login 
 DOM=$1;
 # port for domain 
-PORT=$2;
+PORT='';
 
 # custome port or 22
-if [ "$PORT" = '' ]; then 
+if [ "$2" = '' ]; then 
 	PORT='22';
+else 
+	PORT="$2";
 fi
 
 # run ssh-keygen if not already
@@ -27,12 +29,21 @@ fi
 if [ -e $DIR/$DOM.sh ]; then
 
 	echo "$DOM already exists";
-	echo "Logging in";
-	ssh -p $PORT $DOM;
+	echo "Logging in to $DOM";
+	$DIR/$DOM.sh;
 
 else
 	# create 
-	echo -e '#!/usr/bin/sh' "\n#$date\nssh -p $PORT $DOM" > $DIR/$DOM.sh
+
+	# if port is empty, then it is 22 by default
+	if [ "$2" = '' ]; then 
+		# create .sh file without port which will take 22 as default
+		echo -e '#!/usr/bin/sh' "\n#$date\nssh $DOM" > $DIR/$DOM.sh
+	else 
+		# else, create .sh file with custom port
+		echo -e '#!/usr/bin/sh' "\n#$date\nssh -p $PORT $DOM" > $DIR/$DOM.sh
+	fi
+
 	# set execute bit
 	chmod +x $DIR/$DOM.sh
 	# show file after creation
