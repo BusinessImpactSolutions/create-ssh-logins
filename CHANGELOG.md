@@ -7,4 +7,6 @@ Removed the unwanted -e in shebang in the created login files
 
 Released v0.1.3
 
+## [0.1.1] 
+
 
