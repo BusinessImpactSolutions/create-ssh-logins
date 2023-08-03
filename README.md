@@ -8,7 +8,7 @@ Create SSH login files in a given directory
 
 ~/.ssh
 
-### Creates login .sh files in 
+### Creates logins, .sh files, in 
 
 ~/s/ssh/logins
 
@@ -18,7 +18,9 @@ Will create login files, e.g., ~/s/ssh/logins/user@domain.tld.sh
 
 ~/s/ssh/create-logins
 
-## How to use/run create-logins.sh 
+## USAGE
+
+How to use/run create-logins.sh 
 
 ### if SSH port is a custom port other than 22, 
 
