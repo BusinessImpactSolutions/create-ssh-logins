@@ -43,7 +43,7 @@ else
 	# if port is empty, then it is 22 by default
 	if [ "$2" = '' ]; then
 		# create .sh file without port which will take 22 as default
-		echo -e '#!/usr/bin/sh' "\n#$date\nssh $DOM" > $DIR/$DOM.sh
+		echo '#!/usr/bin/sh' "\n#$date\nssh $DOM" > $DIR/$DOM.sh
 	else
 		# else, create .sh file with custom port
 		echo -e '#!/usr/bin/sh' "\n#$date\nssh -p $PORT $DOM" > $DIR/$DOM.sh
